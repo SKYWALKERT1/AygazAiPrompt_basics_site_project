@@ -1,0 +1,229 @@
+/* Root Variables */
+:root {
+    --main-bg-color: #f4f4f4;
+    --text-color: #333;
+    --main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --nav-bg-color: #333;
+    --nav-text-color: #fff;
+    --nav-hover-bg-color: #555;
+    --section-bg-color: #fff;
+    --footer-bg-color: #333;
+    --footer-text-color: #fff;
+    --button-bg-color: #333;
+    --button-hover-bg-color: #555;
+    --form-input-border-color: #ccc;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--main-font);
+    line-height: 1.6;
+    padding: 10px;
+    color: var(--text-color);
+    background: var(--main-bg-color);
+}
+
+/* Typography */
+h1, h2, h3 {
+    color: var(--text-color);
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Navigation Styles */
+nav {
+    background: var(--nav-bg-color);
+    color: var(--nav-text-color);
+    padding: 10px 0;
+}
+
+nav a {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul li a:hover {
+    background: var(--nav-hover-bg-color);
+}
+
+/* Header Styles */
+header {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--nav-bg-color);
+}
+
+/* Section Styles */
+section, .container {
+    margin: 20px 0;
+    background: var(--section-bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Main Styles */
+main {
+    padding: 0 20px;
+}
+
+/* Project Styles */
+.project {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: var(--footer-bg-color);
+    color: var(--footer-text-color);
+}
+
+/* Form Styles */
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--form-input-border-color);
+    border-radius: 4px;
+}
+
+form button {
+    background-color: var(--button-bg-color);
+    color: var(--footer-text-color);
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    outline: 2px solid var(--nav-hover-bg-color);
+    outline-offset: 2px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .intro img {
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 468px) {
+    /* Adjust body padding on very small screens */
+    body {
+        padding: 5px;
+    }
+
+    main {
+        padding: 5px;
+    }
+
+    .project, .container {
+        padding: 10px;
+    }
+
+    /* Adjust font sizes for smaller screens */
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    p, form label, form input, form textarea, form button {
+        font-size: 0.9em;
+    }
+
+    /* Adjust intro image on very small screens */
+    .intro img {
+        max-width: 50%;
+    }
+}
+
+/* Additional Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    /* Improve form layout on smaller screens */
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust navigation menu for better visibility and accessibility */
+    nav ul li a {
+        padding: 10px 10px; /* Slightly reduce padding for smaller screens */
+    }
+}
+
+/* Focus Styles for Better Accessibility */
+a, form input, form textarea, form button {
+    transition: outline 0.3s ease;
+}
+
+a:focus, form input:focus, form textarea:focus, form button:focus {
+    outline: 3px solid var(--nav-hover-bg-color);
+    outline-offset: 3px;
+}
